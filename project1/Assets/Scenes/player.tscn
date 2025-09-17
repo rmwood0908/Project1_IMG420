@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://tm1m6x0l7gue"]
+
+[ext_resource type="Script" uid="uid://xng34ymqtvqt" path="res://Assets/Scripts/playerController.gd" id="1_aomj2"]
+[ext_resource type="Texture2D" uid="uid://bf0nnignwd8qd" path="res://Assets/Sprites/shroomKnight.png" id="2_7dd06"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dd06"]
+radius = 5.0
+height = 10.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_aomj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_7dd06")
+
+[node name="AgentAnimator" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AgentAnimator"]
+position = Vector2(2, -8)
+scale = Vector2(0.0211792, 0.0173035)
+texture = ExtResource("2_7dd06")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -16)
+zoom = Vector2(8, 8)
